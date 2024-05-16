@@ -84,6 +84,8 @@ paths:
           description: Incorrect inputs
         '401':
           description: Invalid username or password
+        '404':
+          description: User not found
         '500':
           description: Internal Server Error
 
@@ -94,12 +96,12 @@ paths:
         - bearerAuth: []
       responses:
         '200':
-          description: Logout successful
+          description: Logout successfully!
         '500':
           description: Internal Server Error
           
   /api/v1/profile:
-    get:
+    post:
       summary: Get user profile
       security:
         - bearerAuth: []
