@@ -28,7 +28,7 @@ To run the application locally, follow these steps:
    git clone https://github.com/GauravSinghdev/Assignment
 2. **Navigate to the project directory:**
 	```bash
-	cd backend
+	cd Assignment
 3. **Install dependencies:**
 	```bash
 	npm install
@@ -38,7 +38,6 @@ To run the application locally, follow these steps:
      ```plaintext
      MONGODB_URI=your_mongodb_connection_string
      ```
-
    - Create a `config.js` file in the root directory and define the JWT secret key:
      ```javascript
      // config.js
@@ -46,8 +45,10 @@ To run the application locally, follow these steps:
      module.exports = JWT_SECRET;
      ```
 
-   Replace `"your_secret_key_here"` with your actual JWT secret key.
-
+		Replace `"your_secret_key_here"` with your actual JWT secret key.
+5. **Run your backend**
+	```bash
+	node index.js
 ## API Documentation
 Detailed API documentation can be found in the [Swagger UI](http://localhost:3000/api-docs) when the server is running locally.
 
