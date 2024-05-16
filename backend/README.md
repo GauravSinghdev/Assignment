@@ -28,7 +28,7 @@ To run the application locally, follow these steps:
    git clone https://github.com/GauravSinghdev/Assignment
 2. **Navigate to the project directory:**
 	```bash
-	cd Assignment
+	cd backend
 3. **Install dependencies:**
 	```bash
 	npm install
