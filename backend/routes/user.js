@@ -102,7 +102,7 @@ router.post("/login", async (req,res) => {
     
         // Generate JWT token
         const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-
+        isLogin = true;
         res.status(200).json({ message: "User logged in successfully", token });
         } catch (error) {
             console.error(error);
@@ -119,13 +119,13 @@ router.post('/logout', authMiddleware, (req, res) => {
 
         if(isLogin)
         {
-            isLogin = true;
+            isLogin = false;
             const token = req.headers.authorization.split(" ")[1];
             tokenBlacklist.push(token);
             return res.json({ message: "Logout successful" });
         }
         else
-            return res.json({ message: "No user is logged in!" });
+            return res.json({ message: "Logout successfully!" });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal Server Error" });
