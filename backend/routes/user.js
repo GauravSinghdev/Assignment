@@ -125,7 +125,7 @@ router.post('/logout', authMiddleware, (req, res) => {
     }
 });
 
-router.get("/profile", authMiddleware, async (req, res) => {
+router.post("/profile", authMiddleware, async (req, res) => {
     try {
 
         const token = req.headers.authorization.split(" ")[1];
