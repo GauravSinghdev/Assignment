@@ -13,7 +13,7 @@ const registrationSchema = zod.object({
     password: zod.string().min(6),
 })
 
-const isLogin = false; 
+let isLogin = false; 
 const tokenBlacklist = [];
 //registration route
 router.post("/registration", async (req, res) => {
@@ -122,10 +122,10 @@ router.post('/logout', authMiddleware, (req, res) => {
             isLogin = false;
             const token = req.headers.authorization.split(" ")[1];
             tokenBlacklist.push(token);
-            return res.json({ message: "Logout successful" });
+            return res.json({ message: "Logout successfully!" });
         }
         else
-            return res.json({ message: "Logout successfully!" });
+            return res.json({ message: "User is already logged out" });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal Server Error" });
