@@ -36,7 +36,7 @@ To run the application locally, follow these steps:
 
    - Create a `.env` file inside the backend folder and define the following variables:
      ```plaintext
-     MONGODB_URI=your_mongodb_connection_string
+     MONGODB_URL=your_mongodb_connection_string
      ```
    - Create a `config.js` file inside the backend folder and define the JWT secret key:
      ```javascript
