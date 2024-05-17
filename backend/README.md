@@ -34,11 +34,11 @@ To run the application locally, follow these steps:
 	npm install
 4. **Set up environment variables:**
 
-   - Create a `.env` file in the root directory and define the following variables:
+   - Create a `.env` file inside the backend folder and define the following variables:
      ```plaintext
      MONGODB_URI=your_mongodb_connection_string
      ```
-   - Create a `config.js` file in the root directory and define the JWT secret key:
+   - Create a `config.js` file inside the backend folder and define the JWT secret key:
      ```javascript
      // config.js
      const JWT_SECRET = "your_secret_key_here";
