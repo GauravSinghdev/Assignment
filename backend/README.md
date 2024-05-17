@@ -52,9 +52,6 @@ To run the application locally, follow these steps:
 ## API Documentation
 Detailed API documentation can be found in the [Swagger UI](http://localhost:3000/api-docs) when the server is running locally.
 
-## Running Tests
-Unit tests are available for each endpoint. To run the tests, use the following command: npm test
-
 ## Functional Requirements Completion
 - [x] User registration endpoint (`/registration`)
 - [x] User login endpoint (`/login`)
