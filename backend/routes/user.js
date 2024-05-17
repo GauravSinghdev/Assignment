@@ -13,6 +13,7 @@ const registrationSchema = zod.object({
     password: zod.string().min(6),
 })
 
+const isLogin = false; 
 const tokenBlacklist = [];
 //registration route
 router.post("/registration", async (req, res) => {
@@ -116,9 +117,15 @@ router.post('/logout', authMiddleware, (req, res) => {
     try {
         // res.clearCookie('token'); can clear the cookie to remove the token
 
-        const token = req.headers.authorization.split(" ")[1];
-        tokenBlacklist.push(token);
-        return res.json({ message: "Logout successful" });
+        if(isLogin)
+        {
+            isLogin = true;
+            const token = req.headers.authorization.split(" ")[1];
+            tokenBlacklist.push(token);
+            return res.json({ message: "Logout successful" });
+        }
+        else
+            return res.json({ message: "No user is logged in!" });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal Server Error" });
