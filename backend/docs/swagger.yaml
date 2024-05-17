@@ -19,12 +19,15 @@ paths:
               properties:
                 username:
                   type: string
+                  example: gaurav_singh
                 email:
                   type: string
                   format: email
+                  example: gaurav_singh@gmail.com
                 password:
                   type: string
                   minLength: 6
+                  example: gaurav_singh_123
               required:
                 - username
                 - email
@@ -60,11 +63,10 @@ paths:
               properties:
                 username:
                   type: string
-                email:
-                  type: string
-                  format: email
+                  example: gaurav_singh
                 password:
                   type: string
+                  example: gaurav_singh_123
               required:
                 - (username | email)
                 - password
@@ -104,7 +106,7 @@ paths:
     post:
       summary: Get user profile
       security:
-        - bearerAuth: []
+        - BearerAuth: []
       responses:
         '200':
           description: User profile retrieved successfully
@@ -115,11 +117,18 @@ paths:
                 properties:
                   user:
                     type: object
-                    description: User profile data
+                    properties:
+                      username:
+                        type: string
+                        example: gaurav_singh
+                      email:
+                        type: string
+                        format: email
+                        example: gaurav_singh@gmail.com
                   message:
                     type: string
         '401':
-          description: User is logged out! Please login again!
+          description: Unauthorized
         '404':
           description: User not found
         '500':
